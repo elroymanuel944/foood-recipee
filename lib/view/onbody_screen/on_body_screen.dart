@@ -56,7 +56,7 @@ class OnBodyScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
               decoration: BoxDecoration(
                   color: ColorConstans.primaryColor,
-                  borderRadius: BorderRadius.circular(10)),
+                  borderRadius: BorderRadius.circular(15)),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
