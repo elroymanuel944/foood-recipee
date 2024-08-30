@@ -1,3 +1,4 @@
+import 'package:clothing_shop_app/view/onbody_screen/on_body_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,6 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      home: OnBodyScreen(),
+    );
   }
 }
