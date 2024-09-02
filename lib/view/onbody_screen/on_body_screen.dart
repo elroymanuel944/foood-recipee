@@ -1,5 +1,6 @@
 import 'package:clothing_shop_app/utils/constans/color_constans.dart';
 import 'package:clothing_shop_app/utils/constans/image_constans.dart';
+import 'package:clothing_shop_app/view/onbody_screen/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 class OnBodyScreen extends StatelessWidget {
@@ -7,20 +8,60 @@ class OnBodyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          //Frist section
-          _buildBackgroundImage(),
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(
+          children: [
+            //Frist section
+            _buildBackgroundImage(),
 
-          //second section
-          _buildGradientSection()
-        ],
+            //second section
+            _buildGradientSection(context),
+            Positioned(
+              right: 0,
+              left: 0,
+              top: 26,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.star,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+
+                  RichText(
+                      text: TextSpan(
+                          text: "60k+",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15),
+                          children: [
+                        TextSpan(
+                            text: "  Premium recipes",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.normal,
+                                fontSize: 15))
+                      ]))
+                  // Text("60k+",
+                  //     style: TextStyle(
+                  //       fontWeight: FontWeight.bold,
+                  //       color: Colors.white,
+                  //     ))
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Positioned _buildGradientSection() {
+  Positioned _buildGradientSection(BuildContext context) {
     return Positioned(
       bottom: 0,
       left: 0,
@@ -52,23 +93,35 @@ class OnBodyScreen extends StatelessWidget {
                   TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 40),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-              decoration: BoxDecoration(
-                  color: ColorConstans.primaryColor,
-                  borderRadius: BorderRadius.circular(15)),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Start cooking",
-                    style: TextStyle(
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomNavscreen(),
+                    ));
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                decoration: BoxDecoration(
+                    color: ColorConstans.primaryColor,
+                    borderRadius: BorderRadius.circular(15)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Start cooking",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 10),
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 2)),
+                    Icon(
+                      Icons.arrow_forward,
                       color: Colors.white,
                     ),
-                  ),
-                  SizedBox(height: 10),
-                  Icon(Icons.arrow_forward),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
