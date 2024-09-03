@@ -34,9 +34,6 @@ class _BottomNavscreenState extends State<BottomNavscreen> {
           color: Colors.white,
         ),
       ),
-      appBar: AppBar(
-        title: Text("Bottom Nav Bar Screen"),
-      ),
       body: screens[selectedTab],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedTab,
