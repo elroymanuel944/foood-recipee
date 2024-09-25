@@ -1,4 +1,5 @@
 import 'package:clothing_shop_app/utils/constans/color_constans.dart';
+import 'package:clothing_shop_app/view/bookmark_screen/bookmark_screen.dart';
 import 'package:clothing_shop_app/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class _BottomNavscreenState extends State<BottomNavscreen> {
 
   List screens = [
     HomeScreen(),
-    Container(color: Colors.yellow),
+    BookmarkScreen(),
     Container(color: Colors.red),
     Container(color: Colors.blue),
   ];
